@@ -1,0 +1,16 @@
+# This is the custom theme template for gitprompt.sh
+
+# These are the defaults from the "Default" theme 
+# You just need to override what you want to have changed
+
+override_git_prompt_colors() {
+  GIT_PROMPT_THEME_NAME="Xing_RHEL"
+
+  UserName="\$(whoami)"
+  GIT_PROMPT_START_USER="[LinuxBox]${Green} ${UserName}${ResetColor} in ${Yellow}${PathShort}${ResetColor}"
+  GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
+  GIT_PROMPT_END_USER=" \n${White}${ResetColor} › "
+  GIT_PROMPT_END_ROOT=" \n${Red}} › "
+}
+
+reload_git_prompt_colors "Xing_RHEL"

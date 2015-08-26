@@ -19,7 +19,8 @@ if [ -z "${__GIT_PROMPT_DIR}" ]; then
   __GIT_PROMPT_DIR="$( cd -P "$( dirname "${SOURCE}" )" && pwd )"
 fi
 
-gitsym=`git symbolic-ref HEAD`
+#branch=`git symbolic-ref HEAD --short`
+branch=`git symbolic-ref HEAD |awk -F'/' '{print $3}'`
 
 # if "fatal: Not a git repo .., then exit
 case "$gitsym" in fatal*) exit 0 ;; esac
