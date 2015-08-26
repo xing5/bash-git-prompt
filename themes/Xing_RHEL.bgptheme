@@ -7,7 +7,8 @@ override_git_prompt_colors() {
   GIT_PROMPT_THEME_NAME="Xing_RHEL"
 
   UserName="\$(whoami)"
-  GIT_PROMPT_START_USER="[LinuxBox]${Green} ${UserName}${ResetColor} in ${Yellow}${PathShort}${ResetColor}"
+  HostName="\$(hostname)"
+  GIT_PROMPT_START_USER="[${HostName}]${Green} ${UserName}${ResetColor} in ${Yellow}${PathShort}${ResetColor}"
   GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
   GIT_PROMPT_END_USER=" \n${White}${ResetColor} › "
   GIT_PROMPT_END_ROOT=" \n${Red}} › "
